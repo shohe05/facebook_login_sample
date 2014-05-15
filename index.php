@@ -14,9 +14,14 @@ if ($facebook->getUser()) {
     //ユーザ情報を出力
     echo '<img src="https://graph.facebook.com/' . $user['id'] . '/picture" alt="">';
     echo "こんにちは。" . $user['name'] . "さん。";
-    //ログアウト用のリンクを出力
-    echo "<a href='". $facebook->getLogoutUrl() ."'>ログアウト</a>";
+
+    $params = array(
+        'next' => 'AFTER LOGOUT URL', // after logging out, redirect to this link.
+        'access_token' => $facebook->getAccessToken(),
+    );
+    $facebook->destroySession();
+    echo "<a href='" . $facebook->getLogoutUrl($params) . "'>ログアウト</a>";
 } else {
     //ログイン用のリンクを出力
-    echo "<a href='". $facebook->getLoginUrl() ."'>facebookでログイン！</a>";
+    echo "<a href='". $facebook->getLoginUrl() ."'>facebookでログイン</a>";
 }
