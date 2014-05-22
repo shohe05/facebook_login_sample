@@ -4,7 +4,9 @@ Facebook Login
 ### FBにアプリケーションを登録
 - 参考URL: http://www.msng.info/archives/2012/10/facebook-login-with-php.php
 
-### APP IDとAPP SECRETを追加(index.php)
+### index.phpを編集
+
+#### APP IDとAPP SECRETを追加(index.php)
 ```php
 $config = array(
     'appId'  => 'YOUR APP ID',
@@ -12,7 +14,7 @@ $config = array(
 );
 ```
 
-### ログアウト後に遷移するページのリンクを指定
+#### ログアウト後に遷移するページのリンクを指定
 
 ```php
 $params = array(
