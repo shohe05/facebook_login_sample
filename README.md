@@ -1,10 +1,10 @@
-facebook_login_sample
+Facebook Login
 =====================
 
-### アプリケーションを登録
+### FBにアプリケーションを登録
 - 参考URL: http://www.msng.info/archives/2012/10/facebook-login-with-php.php
 
-### APP IDとAPP SECRETを追加
+### APP IDとAPP SECRETを追加(index.php)
 ```php
 $config = array(
     'appId'  => 'YOUR APP ID',
